@@ -4,11 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-
 ## Project Context
-
-**Current Status**: POC complete. Stages 1-10 complete (scaffolding, auth, seed data, provider portal with uploads, admin dashboard core views, admin provider detail, admin document approval, office manager portal, notification system stubbed).
-
 
 ## Tech Stack
 
@@ -31,7 +27,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ALWAYS update the CLAUDE.md with any new or relevant information from our settings.
 
-As the last stage of implementing a stage, always use staffEngineer.md to verify and assure your work is up to our standards.
+As the last stage of implementing a stage, always use agent_staffEngineer.md to verify and assure your work is up to our standards.
 
 Always output a "testPlan.md" for the manual tester to run through and verify fixes and/or updates.
 

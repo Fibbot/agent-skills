@@ -1,3 +1,6 @@
+###
+# sunset cuz plan mode handles all of this and more. just added a 'make a test plan for after' essentially
+###
 # Your task:
 
 Create a staged implementation plan that takes this project from zero to a working local development POC. Output this as a markdown document called IMPLEMENTATION_STAGES.md.

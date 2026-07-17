@@ -84,9 +84,7 @@ FILL IN THE ABOVE WHEN ENOUGH CONTEXT HAS BEEN GAINED
 
 ALWAYS update the CLAUDE.md with any new or relevant information from our settings.
 
-As the last stage of implementing a stage, always use `agent_docs/agent_staffEngineer.md` to verify and assure your work is up to our standards.
-
-Always output a `testPlan.md` (template in `agent_docs/`) for the manual tester to run through and verify fixes and/or updates.
+Always output a `testPlan.md` (template in `agent_docs/`) for the manual tester to run through and verify fixes and/or updates. This should be idiot-proof: if a dev server needs to be running, mention it, if a migration file needs to be run, mention it, do not assume the manual tester has our knowledge of the codebase.
 
 
 ### Memory and Learning

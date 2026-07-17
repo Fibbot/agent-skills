@@ -42,4 +42,3 @@ cp agents/<name>.md ~/.claude/agents/
 - A **skill** is a procedure Claude triggers by task type (how to do X).
 - A **subagent** is a persona reviewer that runs in a fresh context.
 - Project templates (starter CLAUDE.md, lessons.md, testPlan.md) live inside `skills/project-bootstrap/templates/` and are instantiated by that skill.
-- Sunset material is deleted, not archived — git history keeps it.

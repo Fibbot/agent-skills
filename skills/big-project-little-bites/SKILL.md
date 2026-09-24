@@ -50,6 +50,11 @@ One overview/index doc, read first and updated last every session. It must carry
 
 Plus a **runner prompt** with exactly one parameter (the unit name), so starting a session is: set param, paste. And **thick epic docs** — enough *why* to work from cold — but: **don't design implementation in epic docs.** Epic docs are *what* and *why*; the per-unit plan is *how*. Thick means more why, not more how. When reality diverges from a doc, fix the doc in the same session.
 
+**Every unit ends with two handoff deliverables, written without being asked:**
+
+- A **status paragraph at the end of the unit's plan file**, including a one-line machine-verification roll-up ("lint 0 errors, tsc clean, build 90/90, check 40/40, probes green"). Lint, typecheck, build, curl, psql, and probe scripts are the builder's job during the session, not the tester's.
+- A **`testPlan.md` at the repo root** for the human tester, replacing the previous unit's plan. It lists **only what a human has to look at with their own eyes**: one `###` heading per user-visible change, a **Where** line, one checkbox, about 10 boxes max, no commands, no mechanism. Follow [templates/testPlan.md](templates/testPlan.md) exactly, including its self-check.
+
 ### 4. Audit the seams — the part that earns its keep
 
 This is the move a solo planner skips. Once the epic list and a shared epic-doc template exist, **fan out one drafting agent per epic in parallel**, each given the same template, the invariants, and the decision log, and each told: *you are also a spec auditor — surface every gap, contradiction, and cross-feature interaction you find.*
@@ -71,6 +76,7 @@ Each is a real bug found before a line of code. Route every finding into the dec
 - **Decision log with rulings but no reasons.** The next cold session re-opens every one.
 - **Designing in epic docs.** Implementation detail there drifts against real code immediately.
 - **Auditing seams solo.** One planner finds a handful of interactions; one auditor per epic finds an order of magnitude more.
+- **Test plans full of commands.** Anything a command can verify is the builder's job; the tester's plan is only what needs human eyes.
 - **Planning files dumped into an existing repo.** Put the roadmap where it belongs, not inside whatever repo you happened to be in.
 
 ## Quick reference
@@ -81,7 +87,7 @@ plan/
   00_prompt.txt       # runner, one param = unit name
   NN_epic.md          # thick: what + why, not how. NN is a stable ID.
   NN_MM_subunit.md    # session-sized split of a fat epic
-  testPlans/…         # per-unit, for a tester with no context
+testPlan.md           # repo root; current unit only, human-eyes checks only (templates/testPlan.md)
 ```
 
-Order of operations: decompose → seam into foundation → overview + template → **fan-out audit + coverage check** → resolve findings into decision log / open questions → build one unit per session with `writing-plans`.
+Order of operations: decompose → seam into foundation → overview + template → **fan-out audit + coverage check** → resolve findings into decision log / open questions → build one unit per session with `writing-plans` → status paragraph + `testPlan.md` → human tester runs it.

@@ -84,7 +84,7 @@ FILL IN THE ABOVE WHEN ENOUGH CONTEXT HAS BEEN GAINED
 
 ALWAYS update the CLAUDE.md with any new or relevant information from our settings.
 
-Always output a `testPlan.md` (template in `agent_docs/`) for the manual tester to run through and verify fixes and/or updates. This should be idiot-proof: if a dev server needs to be running, mention it, if a migration file needs to be run, mention it, do not assume the manual tester has our knowledge of the codebase.
+Always output a `testPlan.md` at the repo root for the manual tester, following `agent_docs/testPlan.md` exactly. It lists only what a human has to look at with their own eyes — no commands, no mechanism. Anything a command can verify (lint, typecheck, build, tests, probes) is your job before handoff; report it as one line in the review section of `todo.md`.
 
 
 ### Memory and Learning

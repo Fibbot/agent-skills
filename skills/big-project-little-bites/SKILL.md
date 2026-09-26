@@ -45,7 +45,7 @@ One overview/index doc, read first and updated last every session. It must carry
 | Epic one-liners + **build order** (separate from IDs) | what's next without re-reading everything |
 | **Invariants** | rules no unit may break, stated once |
 | **Decision log — ruling *and its reason*** | rulings without reasons get re-litigated by every cold session; the reason is the whole point |
-| **Reference shelf** | facts expensive to rediscover (formats, API names, commands) |
+| **Reference shelf** | facts expensive to rediscover (formats, API names, commands). Current facts only, one line each: no stories, no "we learned". Delete a line when it stops being true. |
 | **Open questions**, numbered, answered inline with a date | product calls that outlive one session |
 
 Plus a **runner prompt** with exactly one parameter (the unit name), so starting a session is: set param, paste. And **thick epic docs** — enough *why* to work from cold — but: **don't design implementation in epic docs.** Epic docs are *what* and *why*; the per-unit plan is *how*. Thick means more why, not more how. When reality diverges from a doc, fix the doc in the same session.
@@ -54,6 +54,13 @@ Plus a **runner prompt** with exactly one parameter (the unit name), so starting
 
 - A **status paragraph at the end of the unit's plan file**, including a one-line machine-verification roll-up ("lint 0 errors, tsc clean, build 90/90, check 40/40, probes green"). Lint, typecheck, build, curl, psql, and probe scripts are the builder's job during the session, not the tester's.
 - A **`testPlan.md` at the repo root** for the human tester, replacing the previous unit's plan. It lists **only what a human has to look at with their own eyes**: one `###` heading per user-visible change, a **Where** line, one checkbox, about 10 boxes max, no commands, no mechanism. Follow [templates/testPlan.md](templates/testPlan.md) exactly, including its self-check.
+
+**There is no third deliverable.** Do not end a unit with a lessons entry, a "learnings" section,
+or a retro. Do not put one in the runner prompt either: a standing "record what this unit taught
+you" line produces an entry every session, and the file grows until it costs more than it saves.
+If a unit hit a surprise, follow the target repo's `CLAUDE.md` rule for where it goes. That rule
+is usually a test, then a comment at the site, then nothing. A ruling with a reason goes in the
+decision log, and an unfixed bug goes in the backlog.
 
 ### 4. Audit the seams — the part that earns its keep
 
@@ -77,6 +84,9 @@ Each is a real bug found before a line of code. Route every finding into the dec
 - **Designing in epic docs.** Implementation detail there drifts against real code immediately.
 - **Auditing seams solo.** One planner finds a handful of interactions; one auditor per epic finds an order of magnitude more.
 - **Test plans full of commands.** Anything a command can verify is the builder's job; the tester's plan is only what needs human eyes.
+- **A lessons/learnings deliverable per unit.** Every session appends, and no session prunes. The
+  decision log holds rulings, tests hold behavior, site comments hold local traps. Nothing else
+  needs a file.
 - **Planning files dumped into an existing repo.** Put the roadmap where it belongs, not inside whatever repo you happened to be in.
 
 ## Quick reference

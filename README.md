@@ -24,7 +24,7 @@ cp agents/<name>.md ~/.claude/agents/
 | Skill | Trigger |
 |---|---|
 | `big-project-little-bites` | Spec too large for one session — decompose into epics with handoff docs and seam audits |
-| `project-bootstrap` | New/existing repo needs the standard CLAUDE.md + lessons.md + testPlan setup |
+| `project-bootstrap` | New/existing repo needs the standard CLAUDE.md + testPlan setup (no lessons file, by design) |
 | `tailwind-mobile-audit` | Mobile-first / touch / iOS audit of a Tailwind codebase |
 | `security-audit-pii` | Whole-codebase PII lifecycle audit + right-sized go/no-go gate |
 | `authz-matrix-audit` | Multi-role/tenant apps: expected vs probed authz matrix, local-only rollback-safe probes |
@@ -42,4 +42,4 @@ cp agents/<name>.md ~/.claude/agents/
 
 - A **skill** is a procedure Claude triggers by task type (how to do X).
 - A **subagent** is a persona reviewer that runs in a fresh context. Subagents report; they don't edit files. The main session implements what the user approves.
-- Project templates (starter CLAUDE.md, lessons.md, testPlan.md) live inside `skills/project-bootstrap/templates/` and are instantiated by that skill.
+- Project templates (starter CLAUDE.md, testPlan.md) live inside `skills/project-bootstrap/templates/` and are instantiated by that skill.

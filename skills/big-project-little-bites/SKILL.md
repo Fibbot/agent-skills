@@ -83,7 +83,7 @@ Each is a real bug found before a line of code. Route every finding into the dec
 - **Decision log with rulings but no reasons.** The next cold session re-opens every one.
 - **Designing in epic docs.** Implementation detail there drifts against real code immediately.
 - **Auditing seams solo.** One planner finds a handful of interactions; one auditor per epic finds an order of magnitude more.
-- **Test plans full of commands.** Anything a command can verify is the builder's job; the tester's plan is only what needs human eyes.
+- **Test plans full of commands.** Anything a command can verify is the builder's job, including layouts, which the builder checks with a headless screenshot; the tester's plan keeps only what needs human judgment, a real device or prod credentials.
 - **A lessons/learnings deliverable per unit.** Every session appends, and no session prunes. The
   decision log holds rulings, tests hold behavior, site comments hold local traps. Nothing else
   needs a file.
